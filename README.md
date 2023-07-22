@@ -4,7 +4,7 @@ iv align="center">
 
 <!-- TABLE OF CONTENTS -->
 
-# 📖 Table of Contents
+# 📖 Book store
 
 - [About the Project](#about-project)
   - [🛠️ Built With](#built-with)
@@ -27,9 +27,8 @@ iv align="center">
 
 # 📖 About the Project <a name="about-project"></a>
 
-**math-magicians** is a web application designed for mathematics enthusiasts. It is a Single Page App (SPA) that provides users with the ability to perform simple calculations and discover random math-related quotes.
+**Book store** is a web application built for managing books, the objective of the following application is not to create a full and functional application, instead it's made for demonstrating the usage of redux as a global state management 
 
-The purpose of the project is to create an intuitive and user-friendly calculator application that allows users to perform basic calculations on any device with an internet connection. Additionally, the application provides inspirational and thought-provoking math-related quotes to inspire users.
 
 ## 🛠️ Built With <a name="built-with"></a>
 
@@ -49,9 +48,8 @@ The purpose of the project is to create an intuitive and user-friendly calculato
 
 ### 🔑 Key Features <a name="key-features"></a>
 
-- ✨ **Simple Calculations**: Users can make basic calculations such as addition, subtraction, multiplication, and division. The application provides an intuitive user interface where users can input numbers and operators to perform the desired calculations.
+- ✨ **Simple book management**: full demonstration of redux toolkit, speed and efficiency 
 
-- 🏅 **Random Math Quotes**: The application offers a collection of inspirational and thought-provoking math-related quotes. Users can read a randomly generated quote by simply refreshing the page or clicking a dedicated button.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -59,7 +57,7 @@ The purpose of the project is to create an intuitive and user-friendly calculato
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [🔗 Live Demo Link](https://kit0-0.github.io/math-magicians/)
+- the live demo link is current unavailable due to development, please be patient as we preparing an amazing product.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,12 +135,10 @@ npm start
 
 ## 🔮 Future Features <a name="future-features"></a>
 
-- [ ] 📱 **Add Animation**: Enhance the user interface with smooth animations and transitions to make the user experience more engaging and interactive.
+- [ ] 📱 **Integrate api usage**: 
 
-- [ ] 📝 **Add Model**: Implement a mathematical model or algorithm to perform advanced calculations, such as trigonometric functions or logarithms, providing users with a wider range of mathematical operations.
-- [ ] **styling**
-- [ ] **calculator**
-- [ ] **testing**
+- [ ] 📝 **add redux**: 
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
