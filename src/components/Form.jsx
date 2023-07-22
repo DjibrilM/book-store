@@ -11,6 +11,7 @@ const Form = () => {
                     <option value="life">Life</option>
                     <option value="love">Love</option>
                     <option selected value="friendship">Friendship</option>
+                    <option selected value="friendship">business</option>
                 </select>
 
                 <button className='h-full p-3 text-white rounded-md active:bg-blue-500 bg-blue-400 w-[200px]'>Add Book</button>

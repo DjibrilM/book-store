@@ -1,11 +1,12 @@
 import React from 'react'
 
-const Book = () => {
+const Book = ({ title, author, category }) => {
     return (
-        <li className='w-full bg-white h-[calc(100vh-200px)] max-h-[7.5rem] border border-slate-300 flex px-4 py-6'>
+        <li className='w-full bg-white  max-h-[8.5rem] border border-slate-300 flex px-4 py-6'>
             <div className=" basis-4/5 h-full border-r">
-                <h3 className=' text-[1.2rem] text-slate-600'>Life</h3>
-                <h2 className='mt-4 text-[1.2rem] font-bold text-slate-700'>Ego Is The Enemy</h2>
+                <h3 className=' text-[1.2rem] text-slate-600'>{author}</h3>
+                <h2 className='mt-2 text-[1.2rem] font-bold text-slate-700'>{title}</h2>
+                <p className='mt-1 pb-4 text-slate-500'>{category}</p>
             </div>
 
             <div className="flex items-center w-1/5 h-full  justify-end   pl-7">

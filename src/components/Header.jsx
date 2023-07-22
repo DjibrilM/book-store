@@ -19,7 +19,7 @@ const Header = () => {
 
                         <NavLink className={({ isActive, isPending }) =>
                             isPending ? "pending" : isActive ? " text-slate-600  duration-100" : "text-slate-400 duration-100"
-                        } to={"/categories"} >
+                        } to={"categories"} >
                             <li>CATGEORIES</li>
                         </NavLink>
                     </ul>
