@@ -21,8 +21,6 @@ const initialState = [
     }
 ]
 
-const initialState = []
-
 const booksSlice = createSlice({
     initialState,
     name: "books",
