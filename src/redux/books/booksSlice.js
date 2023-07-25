@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = [
     {
         "item_id": "item1",
@@ -20,6 +21,8 @@ const initialState = [
     }
 ]
 
+const initialState = []
+
 const booksSlice = createSlice({
     initialState,
     name: "books",
@@ -28,9 +31,9 @@ const booksSlice = createSlice({
             state.unshift(action.payload);
         },
         removeBook: (state, action) => {
-            const elementIndex = state.findIndex(el => el.item_id === action.payload);
-            state.splice(elementIndex, 1);
-        }
+           const elementIndex = state.findIndex(el => el.item_id === action.payload);
+           state.splice(elementIndex, 1);
+        },
     }
 });
 
