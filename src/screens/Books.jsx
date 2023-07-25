@@ -1,42 +1,26 @@
 import React from 'react'
 import Book from '../components/Book';
 import Form from '../components/Form';
-import {  useSelector } from 'react-redux/es/hooks/useSelector';
-import { bookSelector } from '../redux/features/booksSlice';
-
-
-const books = [
-    {
-        title: "Ego is the enemy",
-        author: "Ryan Holiday",
-        category: "Life"
-    },
-    {
-        title: "Ryan Holiday",
-        author: "The Obstacle Is the Way",
-        category: "Life",
-    },
-    {
-
-        title: "Business @ the Speed of Thought",
-        author: "Bill gates",
-        category: "business",
-    }
-]
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { bookSelector } from '../redux/books/booksSlice';
 
 const Books = () => {
-    const states = useSelector(bookSelector);
-    console.log(states);
-
+    const books = useSelector(bookSelector);
     return (
         <>
             <ul className='max-w-[1300px]  pr-10 h-[calc(100vh-250px)] books-container flex flex-col gap-4  overflow-auto  border m-auto mt-10'>
-                {books.map((book, index) => (
+                {books.length > 0 && books.map((book, index) => (
                     <Book
                         category={book.category}
                         author={book.author}
-                        title={book.title} key={index}
+                        title={book.title}
+                        key={index}
+                        id={book.item_id}
                     />))}
+
+                {books.length < 1 && <div className="h-full flex items-center justify-center">
+                    <p>No book available  😓</p>
+                </div>}
             </ul>
             <Form />
         </>
