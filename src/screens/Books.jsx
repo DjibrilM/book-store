@@ -31,7 +31,12 @@ const Books = () => {
     return (
         <>
             <ul className='max-w-[1300px]  pr-10 h-[calc(100vh-250px)] books-container flex flex-col gap-4  overflow-auto  border m-auto mt-10'>
-                {books.map((book, index) => <Book category={book.category} author={book.author} title={book.title} key={index} />)}
+                {books.map((book, index) => (
+                    <Book
+                        category={book.category}
+                        author={book.author}
+                        title={book.title} key={index}
+                    />))}
             </ul>
             <Form />
         </>

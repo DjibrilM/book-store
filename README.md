@@ -1,4 +1,3 @@
-iv align="center">
   <h1>🧮 math-magicians</h1>
 </div>
 
