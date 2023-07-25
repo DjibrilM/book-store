@@ -1,6 +1,8 @@
 import React from 'react'
 import Book from '../components/Book';
 import Form from '../components/Form';
+import {  useSelector } from 'react-redux/es/hooks/useSelector';
+import { bookSelector } from '../redux/features/booksSlice';
 
 
 const books = [
@@ -23,6 +25,9 @@ const books = [
 ]
 
 const Books = () => {
+    const states = useSelector(bookSelector);
+    console.log(states);
+
     return (
         <>
             <ul className='max-w-[1300px]  pr-10 h-[calc(100vh-250px)] books-container flex flex-col gap-4  overflow-auto  border m-auto mt-10'>
