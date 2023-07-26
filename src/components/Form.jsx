@@ -1,13 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { bookSelector } from '../redux/books/booksSlice';
+import { addBookThunk } from '../redux/books/booksSlice';
 
 const Form = () => {
     const dispatch = useDispatch();
     const [bookTitle, setBookTitle] = useState("");
     const [bookAuthor, setBookAuthor] = useState("");
     const [bookCategory, setBookCategory] = useState("");
+    const state = useSelector(bookSelector);
 
     const createNewBook = (e) => {
         e.preventDefault();
@@ -19,7 +22,7 @@ const Form = () => {
             category: bookCategory
         };
 
-        dispatch(addBook(newBook))
+        dispatch(addBookThunk(newBook));
     }
 
     return (
@@ -29,7 +32,7 @@ const Form = () => {
                 <input aria-errormessage='title required' required onChange={(e) => setBookTitle(e.target.value)} placeholder='Book title' className='w-full p-2 pl-4 font-thin text-slate-600 h-12 border rounded-md border-slate-300 focus:border-red-400 focus:border-2  outline-blue-300' type="text" />
                 <input aria-errormessage='author required' required onChange={(e) => setBookAuthor(e.target.value)} placeholder='Autho Name' className='w-5/12 p-2 pl-4 font-thin text-slate-600 h-12 border rounded-md border-slate-300 focus:border-red-400 focus:border-2  outline-blue-300' type="text" />
 
-                <select aria-errormessage='category required' required onChange={(e) => setBookCategory(e.target.value)} name="" className='w-[320px] rounded-md bg-white border px-4 pr-3 outline-blue-300 border-slate-300' id="">
+                <select defaultValue={"business"} aria-errormessage='category required' required onChange={(e) => setBookCategory(e.target.value)} name="" className='w-[320px] rounded-md bg-white border px-4 pr-3 outline-blue-300 border-slate-300' id="">
                     <option value="fiction">Fiction</option>
                     <option value="life">Life</option>
                     <option value="love">Love</option>
@@ -38,7 +41,7 @@ const Form = () => {
                     <option value="notification">Notification</option>
                 </select>
 
-                <button type='submit' className='h-full p-3 text-white rounded-md active:bg-blue-500 bg-blue-400 w-[200px]'>Add Book</button>
+                <button disabled={state.loading} type='submit' className='h-full p-3 text-white rounded-md active:bg-blue-500 bg-blue-400 w-[200px]'> {state.activityLoading ? <span>...loading</span> : <span>Add Book </span>} </button>
             </form>
         </div>
     )
