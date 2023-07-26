@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { removeBookThunk } from '../redux/books/booksSlice';
 
-const Book = ({ title, author, category, id }) => {
+const Book = ({ title, author, category, id, loading }) => {
     const [canDelete, setCanDelete] = useState(false);
     const dispatch = useDispatch();
 
-    const deleteBook = () => {
-        dispatch(removeBook(id));
+    const deleteBook = async () => {
+        dispatch(removeBookThunk(id));
     }
 
     return (
@@ -27,7 +27,7 @@ const Book = ({ title, author, category, id }) => {
             ) : (
                 <div className=' flex gap-4 ml-4'>
                     <button onClick={() => deleteBook()} className='px-2 h-16 py-2 text-sm active:bg-red-300 active:text-red-600 mt-3 text-red-500 rounded-md bg-red-200 border-2 border-red-300'>
-                        Delete anywhere
+                        {!loading ? <span>Delete anywhere</span> : <span>...loading</span>}
                     </button>
 
                     <button onClick={() => setCanDelete(false)} className='px-5 h-16 py-2 active:bg-green-300 active:text-green-600 mt-3 text-green-500 rounded-md bg-green-200 border-2 border-green-300'>
