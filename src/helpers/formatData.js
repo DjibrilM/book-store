@@ -9,6 +9,7 @@ const formatData = (data) => {
             "author": data[key][0].author,
             "category": data[key][0].category,
             "loading": false,
+            "percentages": Math.floor(Math.random() * 100) + 1
         }
 
         convertedData.push(newConversion);
