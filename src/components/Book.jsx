@@ -14,7 +14,7 @@ const Book = ({ title, author, category, id, loading, percentages }) => {
     }
 
     return (
-        <li className='w-full bg-[#fff]   max-h-[25rem] h-full rounded-md border border-slate-300 flex px-4 py-6'>
+        <li className='w-full bg-[#fff]   max-h-[25rem] h-full rounded-sm border border-slate-300 flex px-4 py-6'>
             <div className=" basis-3/5 h-full pl-5 ">
                 <h3 className=' text-[1.2rem] text-gray-500 text-md font-bold roboto'>{category}</h3>
                 <h2 className='text-[1.2rem] text-2xl font-bold text-slate-700'>{title}</h2>
