@@ -10,7 +10,7 @@ import Category from './components/Category';
 
 function App() {
   return (
-    <main className='w-full h-screen bg-slate-200'>
+    <main className='w-full max-w-[1350px] border bg-[#fafafa] m-auto mt-20  min-h-screen'>
       <Header />
       <Routes>
         <Route element={<Books />} path='/' />
